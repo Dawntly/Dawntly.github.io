@@ -9,19 +9,20 @@ html {
   width: 100%;
 }
 body {
-  /*display: flex;*/
-  /*justify-content: center;*/
-  /*align-items: center;*/
   height: 100%;
   width: 100%;
   background: #971700;
   background-size: cover;
 }
-h1 {
-    text-align: center;
-}
 p {
     margin: 10px 0;
+}
+a {
+    text-decoration: none;
+    color: #eb1900;
+}
+a:hover {
+    text-shadow: 0 -1px 0 #eb1900;
 }
 
 .wraper {
@@ -73,25 +74,42 @@ nav a:hover {
 
 /* CONTENT --------------------*/
 .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     margin: 0 10px 10px 10px;
     padding: 3%;
     background: #fff;
     border-radius: 0 0 20px 20px;
     word-break: break-word;
+    font-family: sans-serif;
     overflow: auto;
 }
-.machine {
+.container > :first-of-type:not(h1):not(h2) {
+    flex: 1 1 100%;
+}
+.title, .slogan {
+    width: 100%;
+    text-align: center;
+    font-family: serif;
+}
+.slogan {
+    color: #a01800;
+}
+.container .machine:empty {
     display: block;
+    flex: 0 0 auto;
     width: 200px;
     max-width: 100%;
     margin: 15px auto;
-    /*border-radius: 10px 0 1px 12px/70px;*/
-    /*filter: drop-shadow(0 0 3px #000);*/
 }
 
 @media only screen and (min-width: 550px) {
+    .container > :first-of-type:not(h1):not(h2) {
+        flex: 1 1 50%;
+    }
     .machine {
         float: left;
-        margin: 15px 20px 10px 0;
+        padding: 0 20px 0 0;
     }
 }
